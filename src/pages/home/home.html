@@ -1,14 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      สวัสดี {{ birthDay }}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-item>
+    <ion-label>Username</ion-label>
+    <ion-input [(ngModel)]="username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Telephone</ion-label>
+        <ion-input type="tel" [(ngModel)]="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Birth Day</ion-label>
+        <ion-datetime displayFormat="D MMMM YYYY" 
+                      pickerFormat="D MMMM YYYY" 
+                      [(ngModel)]="birthDay">
+        </ion-datetime>
+      </ion-item>
+
+  <button ion-button block icon-left (click)="signUp(username, password, phone, birthDay)">
+    <ion-icon name="key"></ion-icon>
+    Sign Up
+  </button>
+  <button ion-button block>Cancel</button>
+  <h2>{{ message }}</h2>
 </ion-content>
